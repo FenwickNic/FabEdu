@@ -1,0 +1,141 @@
+<!doctype html>
+<html class="no-js" lang="">
+
+<head>
+  <meta charset="utf-8">
+  <title></title>
+  <meta content="" name="description">
+  <meta content="width=device-width, initial-scale=1" name="viewport">
+
+  <!--link rel="manifest" href="site.webmanifest"-->
+  <link href="icon.png" rel="apple-touch-icon">
+  <!-- Place favicon.ico in the root directory -->
+
+  <link href="css/normalize.css" rel="stylesheet">
+  <link href="css/main.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+
+  <script>
+    var letter_dragged  = "";
+    function allowDrop(ev) {
+      ev.preventDefault();
+      var vignette = $(ev.target).parent('.letter-drop-vignette');
+      if(!vignette.children('.letter-drop').html()){
+        vignette.addClass('isdirty');
+        vignette.children('.letter-drop').html(letter_dragged);
+      }
+    }
+
+    function drag(ev) {
+      console.log("Letter "+ev.target.innerHTML + " travelling.")
+      ev.dataTransfer.setData("letter", ev.target.innerHTML);
+      letter_dragged = ev.target.innerHTML;
+    }
+
+    function drop(ev) {
+      ev.preventDefault();
+      var vignette = $(ev.target).parent('.letter-drop-vignette');
+      vignette.removeClass('isdirty');
+      vignette.addClass('isActive');
+
+    }
+  </script>
+
+  <meta content="#fafafa" name="theme-color">
+</head>
+
+<body class="container-fluid">
+
+<!--[if IE]>
+<p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade
+  your browser</a> to improve your experience and security.</p>
+<![endif]-->
+
+<!-- Add your site or application content here -->
+<div id="sun"></div>
+
+<div class="letter-list">
+  <div class="row justify-content-center">
+    <div class="letter col-sm-1" draggable="true" ondragstart="drag(event)">A</div>
+    <div class="letter col-sm-1" draggable="true" ondragstart="drag(event)">B</div>
+    <div class="letter col-sm-1" draggable="true" ondragstart="drag(event)">C</div>
+    <div class="letter col-sm-1" draggable="true" ondragstart="drag(event)">D</div>
+    <div class="letter col-sm-1" draggable="true" ondragstart="drag(event)">E</div>
+    <div class="letter col-sm-1" draggable="true" ondragstart="drag(event)">F</div>
+    <div class="letter col-sm-1" draggable="true" ondragstart="drag(event)">G</div>
+    <div class="letter col-sm-1" draggable="true" ondragstart="drag(event)">H</div>
+    <div class="letter col-sm-1" draggable="true" ondragstart="drag(event)">I</div>
+    <div class="letter col-sm-1" draggable="true" ondragstart="drag(event)">J</div>
+  </div>
+  <div class="row justify-content-center">
+    <div class="letter col-sm-1" draggable="true" ondragstart="drag(event)">K</div>
+    <div class="letter col-sm-1" draggable="true" ondragstart="drag(event)">L</div>
+    <div class="letter col-sm-1" draggable="true" ondragstart="drag(event)">M</div>
+    <div class="letter col-sm-1" draggable="true" ondragstart="drag(event)">N</div>
+    <div class="letter col-sm-1" draggable="true" ondragstart="drag(event)">O</div>
+    <div class="letter col-sm-1" draggable="true" ondragstart="drag(event)">P</div>
+    <div class="letter col-sm-1" draggable="true" ondragstart="drag(event)">Q</div>
+    <div class="letter col-sm-1" draggable="true" ondragstart="drag(event)">R</div>
+    <div class="letter col-sm-1" draggable="true" ondragstart="drag(event)">S</div>
+    <div class="letter col-sm-1" draggable="true" ondragstart="drag(event)">T</div>
+  </div>
+  <div class="row justify-content-center">
+    <div class="letter col-sm-1" draggable="true" ondragstart="drag(event)">U</div>
+    <div class="letter col-sm-1" draggable="true" ondragstart="drag(event)">V</div>
+    <div class="letter col-sm-1" draggable="true" ondragstart="drag(event)">W</div>
+    <div class="letter col-sm-1" draggable="true" ondragstart="drag(event)">X</div>
+    <div class="letter col-sm-1" draggable="true" ondragstart="drag(event)">Y</div>
+    <div class="letter col-sm-1" draggable="true" ondragstart="drag(event)">Z</div>
+    <div class="letter col-sm-1" draggable="true" ondragstart="drag(event)">Z</div>
+  </div>
+  </div>
+
+  <div class="letter-drop-space row">
+    <div id="letter1" class='letter-drop-vignette col-sm-2' ondrop="drop(event)" ondragover="allowDrop(event)">
+      <div class="letter-drop"></div>
+      <div class="underline"></div>
+    </div>
+    <div id="letter2" class='letter-drop-vignette col-sm-2' ondrop="drop(event)" ondragover="allowDrop(event)">
+      <div class="letter-drop"></div>
+      <div class="underline"></div>
+    </div>
+    <div id="letter3" class='letter-drop-vignette col-sm-2' ondrop="drop(event)" ondragover="allowDrop(event)">
+      <div class="letter-drop"></div>
+      <div class="underline"></div>
+    </div>
+    <div id="letter4" class='letter-drop-vignette col-sm-2' ondrop="drop(event)" ondragover="allowDrop(event)">
+      <div class="letter-drop"></div>
+      <div class="underline"></div>
+    </div>
+    <div id="letter5" class='letter-drop-vignette col-sm-2' ondrop="drop(event)" ondragover="allowDrop(event)">
+      <div class="letter-drop"></div>
+      <div class="underline"></div>
+    </div>
+    <div id="letter6" class='letter-drop-vignette col-sm-2' ondrop="drop(event)" ondragover="allowDrop(event)">
+      <div class="letter-drop"></div>
+      <div class="underline"></div>
+    </div>
+  </div>
+
+<script src="js/vendor/modernizr-3.7.1.min.js"></script>
+<script crossorigin="anonymous" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+        src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+<script src="js/vendor/anime-3.1.js"></script>
+<script src="js/main.js"></script>
+
+<script>window.jQuery || document.write('<script src="js/vendor/jquery-3.4.1.min.js"><\/script>')</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+<script src="js/plugins.js"></script>
+<script src="js/speech.js"></script>
+
+
+</body>
+
+</html>
